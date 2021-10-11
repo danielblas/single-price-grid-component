@@ -1,0 +1,57 @@
+@use '../util/' as *;
+
+html {
+    font-size: 100%;
+    box-sizing: border-box;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+  }
+
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+
+    font-family: 'Karla', sans-serif;
+    font-size: rem(13);
+    @include breakpoint(medium){
+      font-size: rem(16);
+
+      //center the card
+      display: flex;
+    }
+
+    background-color: $light-gray;
+
+    // Typography of all the h1 and h3 in the body, for small and medium up
+
+    *h1{
+      font-size: rem(20);
+
+      @include breakpoint(medium){
+        font-size: rem(24);
+      }
+    }
+
+    *h2{
+      font-size: rem(17);
+
+      @include breakpoint(medium){
+        font-size: rem(20);
+      }
+    }
+
+    *h3{
+      font-size: rem(15);
+
+      @include breakpoint(medium){
+        font-size: rem(17);
+      }
+    }
+}

@@ -1,0 +1,145 @@
+@use '../util/' as *;
+
+.card {
+
+    // Establishing the position of the card
+    margin: auto;
+    @include breakpoint-down(small) {
+        margin-top: rem(70);
+    }
+    max-width: 83%;
+    // Round borders
+    border-radius: rem(5);
+    overflow: hidden;
+    // Flex
+    display: flex;
+    flex-direction: column;
+
+    @include breakpoint(medium) {
+        max-width: 65%;
+        min-width: rem(550);
+        border-radius: rem(7);
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    @include breakpoint(large) {
+        max-width: 45%;
+        min-width: rem(600);
+    }
+
+
+    // Comun features of the sections
+    &__section {
+        padding: rem(25);
+        text-align: left;
+
+        @include breakpoint(medium) {
+           padding: rem(35);
+        }
+
+        @include breakpoint(large) {
+            padding: rem(40);
+        }
+    }
+
+    // Each section
+
+    // Join
+    &__join {
+        background-color: white;
+        
+        h1 {
+            color: $cyan;
+            margin-bottom: rem(25);
+        }
+
+        h3 {
+            color: $bright-yellow;
+            margin-bottom: rem(25);
+            line-height: rem(20);
+        }
+
+        p {
+            color: $grayish-blue;
+            line-height: rem(26);
+        }
+
+        // flex layout medium and up
+        @include breakpoint(medium) {
+            flex: 100%;
+        }
+
+    }
+
+    &__subs {
+        background-color: $cyan;
+        color: white;
+        @include breakpoint(medium) {
+            flex: 50%;
+        }
+
+        h3 {
+            margin-bottom: rem(20);
+        }
+
+        &__price {
+            margin-bottom: rem(10);
+
+            display: flex;
+            align-items: center;
+            gap: rem(15);
+            &--dollar {
+                font-size: rem(32);
+                font-weight: 700;
+
+            }
+            &--permonth {
+                font-size: rem(17);
+                font-weight: 400;
+                color: $light-gray;
+            }
+        }
+
+        p {
+            font-size: rem(15);
+            margin-bottom: rem(25);
+        }
+
+        &__btn {
+            width: 100%;
+            border-radius: rem(5);
+            background-color: $bright-yellow;
+            text-align: center;
+            padding: rem(15);
+
+            a, a:hover, a:active {
+                font-size: rem(15);
+                font-weight: 700;
+                text-decoration: none;
+                color: white;
+            }
+        }
+
+    }
+
+    &__whyus {
+        background-color: $light-cyan;
+        @include breakpoint(medium) {
+            flex: 50%;
+        }
+
+        h2 {
+            color: white;
+            margin-bottom: rem(20);
+        }
+
+        ul {
+            color: $light-gray;
+            list-style-type: none;
+            line-height: rem(20);
+        }
+
+
+    }
+}
